@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "produck": {
+      "command": "sh",
+      "args": [
+        "-c",
+        "p=\"${PRODUCK_HOME:-$HOME/.produck}/bin/produck\"; [ -x \"$p\" ] || { echo \"Produck is not set up: run the Produck setup skill\" >&2; exit 1; }; exec \"$p\" mcp"
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+#!/bin/sh
+home="${PRODUCK_HOME:-$HOME/.produck}"
+version="$(sed -n 's/^VERSION=//p' "$(dirname "$0")/release.env" | head -n 1)"
+if [ ! -x "$home/bin/produck" ]; then
+  printf '%s\n' '{"systemMessage":"Produck: the local app is not installed. Run the Produck setup skill to finish."}'
+else
+  installed="$(cat "$home/app-version" 2>/dev/null)"
+  if [ "$installed" != "$version" ]; then
+    printf '{"systemMessage":"Produck: the local app (%s) does not match the plugin (%s). Run the Produck setup skill to update."}\n' "$installed" "$version"
+  fi
+fi
+exit 0
