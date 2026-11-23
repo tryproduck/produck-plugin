@@ -1,0 +1,10 @@
+{
+  "name": "produck",
+  "version": "0.1.0-test.40.1",
+  "description": "Capture agent workflows and save the ones that work as reusable journeys",
+  "hooks": "./hooks/hooks.json",
+  "skills": "./skills",
+  "interface": {
+    "displayName": "Produck"
+  }
+}

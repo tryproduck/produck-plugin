@@ -1,0 +1,13 @@
+{
+  "name": "produck",
+  "owner": {
+    "name": "Produck"
+  },
+  "plugins": [
+    {
+      "name": "produck",
+      "source": "./plugins/claude-code",
+      "description": "Capture agent workflows and save the ones that work as reusable journeys"
+    }
+  ]
+}
