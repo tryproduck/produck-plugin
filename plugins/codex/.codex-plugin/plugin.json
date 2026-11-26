@@ -1,6 +1,6 @@
 {
   "name": "produck",
-  "version": "0.1.0-113.1",
+  "version": "0.1.0-115.1",
   "description": "Capture agent workflows and save the ones that work as reusable journeys",
   "hooks": "./hooks/hooks.json",
   "skills": "./skills",
