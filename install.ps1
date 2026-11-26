@@ -28,7 +28,7 @@ if (-not [Environment]::Is64BitProcess -or $env:PROCESSOR_ARCHITECTURE -ne 'AMD6
 }
 $tar = Join-Path $env:SystemRoot 'System32/tar.exe'
 if (-not (Test-Path -LiteralPath $tar)) { throw 'Produck requires tar.exe (included with Windows 10 and newer).' }
-$base = if ($env:PRODUCK_RELEASE_URL) { $env:PRODUCK_RELEASE_URL } else { 'https://github.com/tryproduck/produck-plugin/releases/download/v0.1.0-123.1' }
+$base = if ($env:PRODUCK_RELEASE_URL) { $env:PRODUCK_RELEASE_URL } else { 'https://github.com/tryproduck/produck-plugin/releases/download/v0.1.0-124.1' }
 if ($base -eq '__PRODUCK_RELEASE_URL__') { throw 'Use install.ps1 from a GitHub Release, or set PRODUCK_RELEASE_URL.' }
 if ($base -notmatch '^https://[^\s]+$' -and $base -notmatch '^http://127\.0\.0\.1:[0-9]+(?:/[^\s]*)?$') {
     throw 'PRODUCK_RELEASE_URL must be HTTPS (or a loopback HTTP test server).'
