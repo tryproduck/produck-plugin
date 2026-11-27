@@ -25,7 +25,7 @@ if [ -z "$release" ]; then
   esac
 fi
 if [ ! -f "$release" ]; then
-  base="${PRODUCK_RELEASE_URL:-https://github.com/tryproduck/produck-plugin/releases/download/v0.1.0-248.1}"
+  base="${PRODUCK_RELEASE_URL:-https://github.com/tryproduck/produck-plugin/releases/download/v0.1.0-251.1}"
   [ "$base" != __PRODUCK_RELEASE_URL__ ] || fail "Use install.sh from a GitHub Release, or set PRODUCK_RELEASE_URL to its download URL"
   release="$download/release.env"
   curl --fail -sSL -o "$release" "$base/release.env" || fail "Could not download release.env"
