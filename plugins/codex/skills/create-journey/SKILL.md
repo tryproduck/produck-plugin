@@ -3,7 +3,7 @@ name: create-journey
 description: Ask to review and save the workflow just finished as a reusable Produck automation
 argument-hint: "[what the automation is for]"
 disable-model-invocation: true
-allowed-tools: mcp__produck__produck_create_journey, request_user_input, mcp__produck__produck_review_journey
+allowed-tools: mcp__produck__produck_create_journey, request_user_input, request_user_input_async, mcp__produck__produck_review_journey
 ---
 
 Call `mcp__produck__produck_create_journey` once to nominate the task this session most recently
@@ -19,7 +19,8 @@ The call waits for the judge and can take several minutes. Do not call it again
 while it runs.
 
 When it returns `awaitingReview`, follow its `instruction`: ask the person the exact question,
-including the task identifier, with Save and Don't save options through `request_user_input`. Wait for their answer. Only then call
+including the task identifier, with Don't save first, then Save, through `request_user_input_async` when available, otherwise `request_user_input`.
+If neither native question tool is available, use the task-specific chat reply in its instruction. Wait for their answer. Only then call
 `mcp__produck__produck_review_journey` with that `taskId` and their decision. Do not prefill an
 answer. Without an answer, leave the task awaiting review and do not call review or save.
 
